@@ -242,8 +242,17 @@ class advancedCharacter(Character):
 
         for i in Face:
             print("Move Face Slider #{}".format(i), end=" ")
+            num = "Move Face Slider #{}".format(i)
             i = random.choice(info.slider_options)
             print("{}".format(i))
+            #print(i, num)
+
+            #global lines6
+            #lines6 = ["\n*******************************", "\n       FACE DETAILS", "\n", "\n=======FACE SLIDERS============", "\n{}".format(num), " {}".format(i), "\n==============================="]
+            #tx = "{0} {1}.txt".format(randRace, randClass)
+            #textFile = open(tx, "w")
+            #textFile.writelines(lines6)
+            #textFile.close()
 
         print("===============================")
 
@@ -253,8 +262,12 @@ class advancedCharacter(Character):
 
         for i in Brow:
             print("Move Brow Slider #{}".format(i), end=" ")
+            num = "Move Face Slider #{}".format(i)
             i = random.choice(info.slider_options)
             print("{}".format(i))
+
+            global lines7
+            lines7 = ["\n=======BROW SLIDERS============", "\n{}".format(num), " {}".format(i), "\n==============================="]
 
         print("===============================")
 
@@ -408,6 +421,14 @@ class advancedCharacter(Character):
         print("\n===============================")
 
         print("*******************************")
+
+        input("Press the enter key to exit.")
+
+        #tx = "{0} {1}.txt".format(randRace, randClass)
+        #textFile = open(tx, "w")
+        #textFile.writelines(lines6)
+        #textFile.writelines(lines7)
+        #textFile.close()
 
 oneHandedWeapons = info.one_handed_weapons
 randomOneHandedWeapon = random.choice(oneHandedWeapons)             
@@ -660,7 +681,7 @@ def mainCharGen():
     print("\n=======QUESTS & OTHER==========", "\n- - - - - ", "\nMANDATORY QUESTS:", C2.quests, "\n- - - - - ", "\nCHALLENGES(Optional):", C2.c_challenges, "\n- - - - - ", "\n===============================")
 
     print("Your character data has been saved to a text file.\n")
-    input("Press any key to exit.")
+    input("Press the enter key to continue.")
     lines1 = ["\n=======CHARACTER DETAILS=======", "\n- - - - - ", "\nRACE: ", C2.race, "\n- - - - - ", "\nGENDER: ", C2.gender, "\n- - - - -", "\nAPPEARANCE: Press the random appearance button {0} times".format(C2.appearance), "\n- - - - -", "\nHAIR STYLE: ", C2.hair_style, "\n- - - - -", "\nHAIR COLOR: ", C2.hair_color, "\n- - - - -", "\nEYE COLOR: ", C2.eye_color, "\n- - - - - ", "\nBIRTHSIGN: ", C2.birthsign, "\n- - - - - ", "\nCLASS: ", C2.c_class, "\n- - - - - ", "\n===============================\n"]
     lines3 = ["\n=======QUESTS & OTHER==========", "\n- - - - - ", "\nMANDATORY QUESTS: ", str(C2.quests), "\n- - - - - ", "\nCHALLENGES(Optional): ", C2.c_challenges, "\n- - - - - ", "\n==============================="]
     tx = "{0} {1}.txt".format(randRace, randClass)
@@ -673,9 +694,9 @@ def mainCharGen():
     textFile.close()
 
 def advancedCharGen():
-    C1 = advancedCharacter("Face", None, None, None)
-    C1.FACE()
-    C1.TONE()
+    C2 = advancedCharacter("Face", None, None, None)
+    C2.FACE()
+    C2.TONE()
 
 menu = [
    "1. Normal Character Generator",
